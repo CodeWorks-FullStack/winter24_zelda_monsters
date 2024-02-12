@@ -1,5 +1,12 @@
+import { AppState } from "../AppState.js";
 import { monstersService } from "../services/MonstersService.js";
 import { Pop } from "../utils/Pop.js";
+
+function _drawMonsters() {
+  const monsters = AppState.monsters
+  console.log('drawing monsters', monsters);
+}
+
 
 export class MonstersController {
   constructor () {
@@ -11,6 +18,7 @@ export class MonstersController {
     // this.waitForPromise()
     // console.log('Running 4th');
 
+    AppState.on('monsters', _drawMonsters)
   }
 
   async getMonsters() {
