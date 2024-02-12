@@ -11,14 +11,13 @@ export class Monster {
 
   get CardHTMLTemplate() {
     return `
-    <div class="col-md-6">
+    <div class="col-md-4 mb-3">
       <div class="card">
-        <img src="https://botw-compendium.herokuapp.com/api/v3/compendium/entry/thunderblight_ganon/image" alt=""
+        <img src="${this.imgURL}" alt="${this.name}"
           class="card-img-top">
         <div class="card-body">
           <h2>${this.name}</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor sequi quam repellendus placeat numquam,
-            et laudantium neque? Repudiandae, quae ab.</p>
+          <p>${this.description}</p>
         </div>
       </div>
     </div>
