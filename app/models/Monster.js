@@ -2,6 +2,7 @@ export class Monster {
   constructor (data) {
     this.id = data.id
     this.name = data.name
+    // NOTE can rename properties on this class to whatever we like, just make you drill into the api's objects correctly
     this.commonLocations = data.common_locations
     this.description = data.description
     this.isDLC = data.dlc
@@ -49,6 +50,8 @@ export class Monster {
     return this.drops.length > 0 ? `Drops ${this.drops.length}` : 'Not worth your time'
   }
 }
+
+// NOTE this was copied and pasted over from the console. Make sure you are pulling the correct values out of the objects from external apis
 
 // const monsterData = {
 //   "category": "monsters",
