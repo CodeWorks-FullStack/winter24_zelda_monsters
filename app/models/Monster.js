@@ -8,6 +8,22 @@ export class Monster {
     this.drops = data.drops
     this.imgURL = data.image
   }
+
+  get CardHTMLTemplate() {
+    return `
+    <div class="col-md-6">
+      <div class="card">
+        <img src="https://botw-compendium.herokuapp.com/api/v3/compendium/entry/thunderblight_ganon/image" alt=""
+          class="card-img-top">
+        <div class="card-body">
+          <h2>${this.name}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor sequi quam repellendus placeat numquam,
+            et laudantium neque? Repudiandae, quae ab.</p>
+        </div>
+      </div>
+    </div>
+    `
+  }
 }
 
 // const monsterData = {
