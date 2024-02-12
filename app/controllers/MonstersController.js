@@ -1,4 +1,5 @@
 import { monstersService } from "../services/MonstersService.js";
+import { Pop } from "../utils/Pop.js";
 
 export class MonstersController {
   constructor () {
@@ -12,8 +13,14 @@ export class MonstersController {
 
   }
 
-  getMonsters() {
-    monstersService.getMonsters()
+  async getMonsters() {
+    try {
+      await monstersService.getMonsters()
+      Pop.success('Get monsters!')
+    } catch (error) {
+      Pop.error(error)
+      console.error(error);
+    }
   }
 
   async waitForPromise() {
