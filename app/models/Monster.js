@@ -5,6 +5,7 @@ export class Monster {
     this.commonLocations = data.common_locations
     this.description = data.description
     this.isDLC = data.dlc
+    // NOTE this property was null on certain objects from the api, so we default to an empty array if that's the case
     this.drops = data.drops || []
     this.imgURL = data.image
   }
