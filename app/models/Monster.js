@@ -5,7 +5,7 @@ export class Monster {
     this.commonLocations = data.common_locations
     this.description = data.description
     this.isDLC = data.dlc
-    this.drops = data.drops
+    this.drops = data.drops || []
     this.imgURL = data.image
   }
 
@@ -16,12 +16,36 @@ export class Monster {
         <img src="${this.imgURL}" alt="${this.name}"
           class="card-img-top">
         <div class="card-body">
-          <h2>${this.name}</h2>
+          <h2>${this.name} ${this.DLCIcon}</h2>
           <p>${this.description}</p>
+          <h3>${this.DropTitle}</h3>
+          <ul>
+            ${this.DropListItems}
+          </ul>
         </div>
       </div>
     </div>
     `
+  }
+
+  get DLCIcon() {
+    if (this.isDLC) {
+      return `<i class="mdi mdi-download"></i>`
+    }
+
+    return ''
+  }
+
+  get DropListItems() {
+
+    let htmlString = ''
+    this.drops.forEach(drop => htmlString += `<li>${drop}</li>`)
+
+    return htmlString
+  }
+
+  get DropTitle() {
+    return this.drops.length > 0 ? `Drops ${this.drops.length}` : 'Not worth your time'
   }
 }
 
