@@ -13,7 +13,7 @@ export class MonstersController {
   }
 
   getMonsters() {
-    // monstersService.getMonsters()
+    monstersService.getMonsters()
   }
 
   async waitForPromise() {
