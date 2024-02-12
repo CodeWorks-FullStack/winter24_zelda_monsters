@@ -5,10 +5,10 @@ export class MonstersController {
     console.log('monsters controller loaded');
     this.getMonsters()
 
-    console.log('Running 1st');
-    console.log('Running 2nd');
-    this.waitForPromise()
-    console.log('Running 4th');
+    // console.log('Running 1st');
+    // console.log('Running 2nd');
+    // this.waitForPromise()
+    // console.log('Running 4th');
 
   }
 
