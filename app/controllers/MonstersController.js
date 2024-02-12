@@ -21,6 +21,7 @@ export class MonstersController {
       Pop.error(error)
       console.error(error);
     }
+
   }
 
   async waitForPromise() {
