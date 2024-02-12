@@ -1,10 +1,17 @@
 import { AppState } from "../AppState.js";
 import { monstersService } from "../services/MonstersService.js";
 import { Pop } from "../utils/Pop.js";
+import { setHTML } from "../utils/Writer.js";
 
 function _drawMonsters() {
   const monsters = AppState.monsters
   console.log('drawing monsters', monsters);
+
+  let htmlString = ''
+
+  monsters.forEach(monster => htmlString += monster.CardHTMLTemplate)
+
+  setHTML('monsterCards', htmlString)
 }
 
 
